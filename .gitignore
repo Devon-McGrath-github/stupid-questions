@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Logs
 logs
 *.log
@@ -36,7 +36,5 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
-=======
-node_modules
+
 static
->>>>>>> 10e2034dec020e647cc1caf727babdd919592ecc
