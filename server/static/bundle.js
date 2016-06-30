@@ -20405,6 +20405,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+<<<<<<< HEAD
 	var _Questions = __webpack_require__(169);
 	
 	var _Questions2 = _interopRequireDefault(_Questions);
@@ -20412,6 +20413,11 @@
 	var _questions = __webpack_require__(170);
 	
 	var _questions2 = _interopRequireDefault(_questions);
+=======
+	var _AddQuestion = __webpack_require__(169);
+	
+	var _AddQuestion2 = _interopRequireDefault(_AddQuestion);
+>>>>>>> 189a326b379f72340932b63fb28d7e0cbe7054a5
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -20424,6 +20430,7 @@
 	      _react2.default.createElement(
 	        'h1',
 	        null,
+<<<<<<< HEAD
 	        'Stupid Questions'
 	      ),
 	      _react2.default.createElement(_Questions2.default, { questions: _questions2.default })
@@ -20486,19 +20493,30 @@
 	          'Add Question'
 	        )
 	      )
+=======
+	        'Things'
+	      ),
+	      _react2.default.createElement(_AddQuestion2.default, null)
+>>>>>>> 189a326b379f72340932b63fb28d7e0cbe7054a5
 	    );
 	  }
 	});
 
 /***/ },
+<<<<<<< HEAD
 /* 170 */
 /***/ function(module, exports) {
+=======
+/* 169 */
+/***/ function(module, exports, __webpack_require__) {
+>>>>>>> 189a326b379f72340932b63fb28d7e0cbe7054a5
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+<<<<<<< HEAD
 	exports.default = [{
 	  'id': 1,
 	  'content': 'What is your name?'
@@ -20506,6 +20524,46 @@
 	  'id': 2,
 	  'content': 'What is my name?'
 	}];
+=======
+	exports.default = addQuestion;
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function addQuestion() {
+	  var textInput = '';
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(
+	      'h1',
+	      null,
+	      'Giz us a question'
+	    ),
+	    _react2.default.createElement(
+	      'form',
+	      { onSubmit: function onSubmit(e) {
+	          e.preventDefault();
+	          if (textInput.value.trim()) {
+	            var question = textInput.value;
+	            console.log(question);
+	          }
+	        } },
+	      _react2.default.createElement('input', { ref: function ref(input) {
+	          textInput = input;
+	        } }),
+	      _react2.default.createElement(
+	        'button',
+	        { type: 'submit' },
+	        'Submit'
+	      )
+	    )
+	  );
+	}
+>>>>>>> 189a326b379f72340932b63fb28d7e0cbe7054a5
 
 /***/ }
 /******/ ]);
