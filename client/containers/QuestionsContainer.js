@@ -2,7 +2,6 @@ import { connect } from 'react-redux'
 
 import QuestionsComponent from '../components/Questions'
 
-
 const mapStateToProps = (state) => {
   return {
     questions: state.questions
@@ -19,4 +18,3 @@ const AddQuestionContainer = connect(
 )(QuestionsComponent)
 
 export default AddQuestionContainer
-v

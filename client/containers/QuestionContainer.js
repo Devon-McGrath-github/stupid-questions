@@ -1,16 +1,15 @@
 import { connect } from 'react-redux'
 
-// import Board from '../components/Board'
-
+import Question from '../components/Question'
 
 const mapStateToProps = (state) => {
   return {
-    statuses: state.statuses
+    questions: state.questions
   }
 }
 
 const BoardContainer = connect(
   mapStateToProps
-)(Board)
+)(Question)
 
 export default BoardContainer

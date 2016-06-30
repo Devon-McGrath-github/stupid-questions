@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 export default React.createClass({
   render () {
@@ -11,7 +12,7 @@ export default React.createClass({
         <h1>Add New Answer</h1>
         <div>
           <textarea placeholder="type here" rows="10" cols="50"></textarea>
-          <span><button onClick={addAnswer}>Add Answer</button></span>
+          <Link to='Question'><button onClick={addAnswer}>Add Answer</button></Link>
         </div>
       </div>
     )

@@ -2,7 +2,6 @@ import { connect } from 'react-redux'
 
 import AddQuestion from '../components/Add-question'
 
-
 const mapStateToProps = (state) => {
   return {
     questions: state.questions

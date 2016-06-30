@@ -23,12 +23,6 @@ module.exports = {
       test: /\.jsx?$/,
       loader: 'babel?cacheDirectory',
       include: PATHS.app
-    }],
-    preLoaders: [{
-      test: /\.jsx?$/,
-      loaders: ['eslint'],
-      include: PATHS.app,
-      exclude: /node_modules/
     }]
   },
   plugins: [

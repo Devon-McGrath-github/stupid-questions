@@ -11,7 +11,8 @@ export default React.createClass({
         <h1>Questions</h1>
           <ul>
           {this.props.questions.map(function (question) {
-            return <li key={question.id}><a href='#'>{question.content}</a></li>
+              {console.log('here', question)}
+            return <li key={question.id}><Link to='Question'>{question.content}</Link></li>
           })}
           </ul>
           <Link to='AddQuestion'><button>Add Question</button></Link>

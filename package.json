@@ -5,11 +5,12 @@
   "main": "server/server.js",
   "scripts": {
     "build": "webpack",
-    "lint": "eslint . --ext .js --ext .jsx --cache",
+    "testerino": "webpack --watch",
+    
     "postinstall": "webpack",
     "watch": "webpack-dev-server --hot --inline",
     "start": "node server/server",
-    "server": "node-inspector --web-port 8888 & node-dev server/server",
+    "server": "node-inspector --web-port 8888 & node-dev --debug server/server",
     "test": "ava --watch",
     "init": "knex init",
     "migrate:make": "knex migrate:make",

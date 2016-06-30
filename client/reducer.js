@@ -1,5 +1,5 @@
-inport questions from '../dummy/questions'
-inport answers from '../dummy/answers'
+import questions from './dummy/questions'
+import answers from './dummy/answers'
 
 const INITIAL_STATE = {
   questions: questions,
