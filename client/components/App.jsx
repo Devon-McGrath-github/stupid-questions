@@ -2,6 +2,7 @@ import React from 'react'
 import Question from './Question'
 
 import Questions from './Questions'
+import AddQuestion from './AddQuestion'
 import questionList from '../dummy/questions'
 
 export default React.createClass({
