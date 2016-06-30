@@ -20405,6 +20405,14 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _Questions = __webpack_require__(169);
+	
+	var _Questions2 = _interopRequireDefault(_Questions);
+	
+	var _questions = __webpack_require__(170);
+	
+	var _questions2 = _interopRequireDefault(_questions);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = _react2.default.createClass({
@@ -20416,11 +20424,88 @@
 	      _react2.default.createElement(
 	        'h1',
 	        null,
-	        'Things'
+	        'Stupid Questions'
+	      ),
+	      _react2.default.createElement(_Questions2.default, { questions: _questions2.default })
+	    );
+	  }
+	});
+
+/***/ },
+/* 169 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _react2.default.createClass({
+	  displayName: 'Questions',
+	
+	  propTypes: {
+	    questions: _react2.default.PropTypes.array
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        'Questions'
+	      ),
+	      _react2.default.createElement(
+	        'ul',
+	        null,
+	        this.props.questions.map(function (question) {
+	          return _react2.default.createElement(
+	            'li',
+	            { key: question.id },
+	            _react2.default.createElement(
+	              'a',
+	              { href: '#' },
+	              question.content
+	            )
+	          );
+	        })
+	      ),
+	      _react2.default.createElement(
+	        'a',
+	        { href: '#' },
+	        _react2.default.createElement(
+	          'button',
+	          null,
+	          'Add Question'
+	        )
 	      )
 	    );
 	  }
 	});
+
+/***/ },
+/* 170 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = [{
+	  'id': 1,
+	  'content': 'What is your name?'
+	}, {
+	  'id': 2,
+	  'content': 'What is my name?'
+	}];
 
 /***/ }
 /******/ ]);
