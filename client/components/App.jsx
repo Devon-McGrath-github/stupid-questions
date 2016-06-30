@@ -1,10 +1,12 @@
 import React from 'react'
+import AnswerPage from './AnswerPage'
 
 export default React.createClass({
   render () {
     return (
       <div>
-        <h1>Things</h1>
+
+        <AnswerPage />
       </div>
     )
   }
