@@ -7,7 +7,7 @@ import appReducer from './reducers'
 
 let store = createStore(appReducer)
 
-console.log(store.getInitialState())
+console.log(store.getState())
 
 document.addEventListener('DOMContentLoaded', () => {
   render(
