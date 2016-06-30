@@ -3,7 +3,6 @@ import { Link } from 'react-router'
 
 export default React.createClass({
   render () {
-
     // placeholder function
     const addAnswer = () => console.log('Add Answer Here')
 
