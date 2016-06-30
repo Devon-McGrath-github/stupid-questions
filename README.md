@@ -4,7 +4,8 @@
 
 > An app for students to anonymously ask _stupid_ questions
 
-Instructions for Installation:
+
+## Installation instructions
 
 1. Run `npm install` after cloning.
 2. Run `npm start` and take your browser to [http://localhost:8080](http://localhost:8080) for a webpack setup with its dev server and hot module reloading.
@@ -17,25 +18,35 @@ interface is at [http://localhost:8888/?debug=5858](http://localhost:8888/?debug
   - Run the tests with `npm test`.
 
 
-
-## [PostgreSQL setup OSX](http://exponential.io/blog/2015/02/21/install-postgresql-on-mac-os-x-via-brew/)
+## [PostgreSQL setup on OS X](http://exponential.io/blog/2015/02/21/install-postgresql-on-mac-os-x-via-brew/)
 
 1. `brew update`
 2. `brew install postgres`
 3. Ensure postgres service has started, using: `postgres -D /usr/local/var/postgres`
 4. `createdb stupid_questions`
 5. Run migrations and seed data
-5. To check postgres db, `psql stupid_questions`
-
+6. To check postgres db, `psql stupid_questions`
 
 ### [Create Postgres User](https://www.postgresql.org/docs/9.2/static/app-createuser.html)
 
-Postgres installs using the default OSX credentials, which can cause issues with users of a Windows/UNIX system. We will create a new the postgres username and password
+Postgres installs using the default OS X credentials, which can cause issues with users of a Windows/UNIX system. We will create a new the postgres username and password:
 
 ```bash
 createuser postgres --pwprompt
 ```
-- This will prompt for a password, use `postgres` for the password
-- If user already exists, use `dropuser postgres`
 
-This means that when connecting to the local database, use the username postgres and the password postgres
+* This will prompt for a password, use `postgres` for the password.
+* If user already exists, use `dropuser postgres`.
+
+This means that when connecting to the local database, use the username `postgres` and the password `postgres`.
+
+
+## Heroku deployment
+
+The app is deployed to http://stupid-questionz.herokuapp.com
+
+To deploy to Heroku, after installing the Heroku Toolbelt, run:
+
+```bash
+git push heroku my-branch-name:master
+```

@@ -1,7 +1,6 @@
 /* global __dirname */
 
 var path = require('path')
-
 var webpack = require('webpack')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 
@@ -24,6 +23,12 @@ module.exports = {
       test: /\.jsx?$/,
       loader: 'babel?cacheDirectory',
       include: PATHS.app
+    }],
+    preLoaders: [{
+      test: /\.jsx?$/,
+      loaders: ['eslint'],
+      include: PATHS.app,
+      exclude: /node_modules/
     }]
   },
   plugins: [
