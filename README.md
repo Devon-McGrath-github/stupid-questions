@@ -1,10 +1,11 @@
  [![Stories in Ready](https://badge.waffle.io/kauri-2016/stupid-questions.svg?label=ready&title=Ready)](http://waffle.io/kauri-2016/stupid-questions) 
 
+
 # Stupid Questionz
 
 > An app for students to anonymously ask _stupid_ questions
 
-Instructions for Installation:
+## Installation instructions
 
 1. Run `npm install` after cloning.
 2. Run `npm start` and take your browser to [http://localhost:8080](http://localhost:8080) for a webpack setup with its dev server and hot module reloading.
@@ -15,3 +16,14 @@ interface is at [http://localhost:8888/?debug=5858](http://localhost:8888/?debug
   - The server is started with `node-dev` so it will restart after it detects changes.
 * a test setup for running tests with `ava` and `enzyme`.
   - Run the tests with `npm test`.
+
+
+## Heroku deployment
+
+The app is deployed to http://stupid-questionz.herokuapp.com
+
+To deploy to Heroku, after installing the Heroku Toolbelt, run:
+
+```bash
+git push heroku my-branch-name:master
+```
