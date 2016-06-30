@@ -12,7 +12,7 @@ export default function AddQuestion () {
           console.log(question)
         } }}>
          <input ref={input => { textInput = input } } />
-         <button type='submit'>Submit</button>
+         <Link to='/'><button type='submit'>Submit</button></Link>
         </form>
      </div>
   )

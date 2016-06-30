@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 export default React.createClass({
   propTypes: {
@@ -13,7 +14,7 @@ export default React.createClass({
             return <li key={question.id}><a href='#'>{question.content}</a></li>
           })}
           </ul>
-          <a href='#'><button>Add Question</button></a>
+          <Link to='AddQuestion'><button>Add Question</button></Link>
       </div>
     )
   }
