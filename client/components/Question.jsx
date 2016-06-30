@@ -10,12 +10,12 @@ export default React.createClass({
     return (
       <div>
         <Link to='/'><button>All Questions</button></Link>
-      <div>
-      <h1>Q:</h1>
-      <p>{this.props.question.content}</p>
-      </div>
-        <Answers />
-        <AddAnswer />
+        <div>
+        <h1>Q:</h1>
+        <p>{this.props.question.content}</p>
+        </div>
+          <Answers />
+          <AddAnswer />
       </div>
     )
   }
