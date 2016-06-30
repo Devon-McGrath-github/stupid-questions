@@ -1,4 +1,4 @@
- [![Stories in Ready](https://badge.waffle.io/kauri-2016/stupid-questions.svg?label=ready&title=Ready)](http://waffle.io/kauri-2016/stupid-questions) 
+ [![Stories in Ready](https://badge.waffle.io/kauri-2016/stupid-questions.svg?label=ready&title=Ready)](http://waffle.io/kauri-2016/stupid-questions)
 
 # Stupid Questionz
 
@@ -15,3 +15,27 @@ interface is at [http://localhost:8888/?debug=5858](http://localhost:8888/?debug
   - The server is started with `node-dev` so it will restart after it detects changes.
 * a test setup for running tests with `ava` and `enzyme`.
   - Run the tests with `npm test`.
+
+
+
+## [PostgreSQL setup OSX](http://exponential.io/blog/2015/02/21/install-postgresql-on-mac-os-x-via-brew/)
+
+1. `brew update`
+2. `brew install postgres`
+3. Ensure postgres service has started, using: `postgres -D /usr/local/var/postgres`
+4. `createdb stupid_questions`
+5. Run migrations and seed data
+5. To check postgres db, `psql stupid_questions`
+
+
+### [Create Postgres User](https://www.postgresql.org/docs/9.2/static/app-createuser.html)
+
+Postgres installs using the default OSX credentials, which can cause issues with users of a Windows/UNIX system. We will create a new the postgres username and password
+
+```bash
+createuser postgres --pwprompt
+```
+- This will prompt for a password, use `postgres` for the password
+- If user already exists, use `dropuser postgres`
+
+This means that when connecting to the local database, use the username postgres and the password postgres
