@@ -1,7 +1,7 @@
 import React from 'react'
 import Question from './Question'
 
-import Questions from './Questions'
+import Questions from '../containers/QuestionsContainer'
 import questionList from '../dummy/questions'
 import AddQuestion from './Add-question'
 
