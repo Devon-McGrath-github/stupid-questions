@@ -35,8 +35,12 @@ Postgres installs using the default OS X credentials, which can cause issues wit
 createuser postgres --pwprompt
 ```
 
-* This will prompt for a password, use `postgres` for the password.
-* If user already exists, use `dropuser postgres`.
+### Helpful PostgreSQL commands
+
+1. If user already exists, use `dropuser <username>`
+2. To drop database, use `dropdb <database name>`
+
+This will prompt for a password, use `postgres` for the password.
 
 This means that when connecting to the local database, use the username `postgres` and the password `postgres`.
 
