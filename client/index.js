@@ -1,7 +1,13 @@
 import React from 'react'
 import { render } from 'react-dom'
+import { createStore } from 'redux'
 
 import App from './components/App'
+import appReducer from './reducers'
+
+let store = createStore(appReducer)
+
+console.log(store.getInitialState())
 
 document.addEventListener('DOMContentLoaded', () => {
   render(
