@@ -1,12 +1,11 @@
 import React from 'react'
-import AnswerPage from './AnswerPage'
+import Question from './Question'
 
 export default React.createClass({
   render () {
     return (
       <div>
-
-        <AnswerPage />
+        <Question />
       </div>
     )
   }
