@@ -5,10 +5,17 @@
   "main": "server/server.js",
   "scripts": {
     "build": "webpack",
-    "watch": "webpack --watch",
-    "start": "webpack-dev-server --hot --inline",
+    "lint": "eslint . --ext .js --ext .jsx --cache",
+    "watch": "webpack-dev-server --hot --inline",
+    "start": "node server/server",
     "server": "node-inspector --web-port 8888 & node-dev server/server",
-    "test": "ava --watch"
+    "test": "ava --watch",
+    "init": "knex init",
+    "migrate:make": "knex migrate:make",
+    "migrate:latest": "knex migrate:latest",
+    "migrate:rollback": "knex migrate:rollback",
+    "seed:make": "knex seed:make",
+    "seed:run": "knex seed:run"
   },
   "ava": {
     "failfast": true,
@@ -44,6 +51,12 @@
     "babel-preset-react-hmre": "^1.1.1",
     "copy-webpack-plugin": "^3.0.1",
     "enzyme": "^2.3.0",
+    "eslint": "^2.13.1",
+    "eslint-config-standard": "^5.3.1",
+    "eslint-loader": "^1.3.0",
+    "eslint-plugin-promise": "^1.3.2",
+    "eslint-plugin-react": "^5.2.2",
+    "eslint-plugin-standard": "^1.3.2",
     "node-dev": "^3.1.3",
     "node-inspector": "^0.12.8",
     "react-addons-test-utils": "^15.1.0",
@@ -58,6 +71,8 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.5.1",
     "redux": "^3.5.2",
-    "superagent": "^2.0.0"
+    "superagent": "^2.0.0",
+    "knex": "^0.11.7",
+    "pg": "^6.0.1"
   }
 }
