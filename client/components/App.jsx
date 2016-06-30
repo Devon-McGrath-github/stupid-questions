@@ -5,6 +5,7 @@ export default React.createClass({
   render () {
     return (
       <div>
+          <h1>Question</h1>
         <Question />
       </div>
     )
