@@ -21,7 +21,7 @@ export default React.createClass({
             if (answer.questionId === currentQuestion.id) {
               return (
                 <li key={answer.id}>
-                  {answer.content} {' '}
+                  {answer.content}
                 </li>
                )
             }
