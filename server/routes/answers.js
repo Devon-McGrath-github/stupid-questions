@@ -8,7 +8,11 @@ router.get('/', function (req, res) {
     var id = req.query.qid
     db.getAnswersByQuestionId(id)
       .then(function (answers) {
-        res.json(answers)
+        if(answers.length) {
+          res.json(answers)
+        } else {
+          res.sendStatus(404)
+        }
       })
   } else {
     res.sendStatus(404)
