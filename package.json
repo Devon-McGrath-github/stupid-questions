@@ -2,7 +2,7 @@
   "name": "stupid-questions",
   "version": "1.0.0",
   "description": "An app for students to anonymously ask 'stupid' questions.",
-  "main": "server/server.js",
+  "main": "server/lib/server.js",
   "scripts": {
     "testerino": "webpack --watch",
     "watch": "webpack-dev-server --hot --inline",
