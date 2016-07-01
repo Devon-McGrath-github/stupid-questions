@@ -1,24 +1,26 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { Link, browserHistory } from 'react-router'
 
-AddQuestion.PropTypes = {
-  addQuestion: React.PropTypes.func
-}
-
-export default function AddQuestion (props) {
-  let textInput = ''
-  return (
-    <div>
-    <h1>Giz us a question</h1>
-      <form onSubmit= {e => {
-        e.preventDefault()
-        if (textInput.value.trim()) {
-          let question = textInput.value
-          props.addQuestion(question)
-        } }}>
-         <input ref={input => { textInput = input } } />
-         <Link to='/'><button type='submit'>Submit</button></Link>
-        </form>
-     </div>
-  )
-}
+export default React.createClass({
+  propTypes: {
+    addQuestion: React.PropTypes.func
+  },
+  render () {
+    let textInput = ''
+    return (
+      <div>
+      <h1>Giz us a question</h1>
+        <form onSubmit= {e => {
+          e.preventDefault()
+          if (textInput.value.trim()) {
+            let question = textInput.value
+            this.props.addQuestion(question)
+            browserHistory.push('/')
+          } }}>
+           <input ref={input => { textInput = input } } />
+           <button type='submit'>Submit</button>
+          </form>
+       </div>
+      )
+  }
+})

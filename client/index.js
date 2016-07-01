@@ -1,13 +1,14 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
+import { syncHistoryWithStore } from 'react-router-redux'
 import { createStore, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 
 import App from './components/App'
-import Question from './components/Question'
-import Questions from './components/Questions'
-import AddQuestion from './components/AddQuestion'
+import Question from './containers/QuestionContainer'
+import Questions from './containers/QuestionsContainer'
+import AddQuestion from './containers/AddQuestionContainer'
 import appReducer from './reducers'
 
 let store = createStore(
@@ -17,14 +18,16 @@ let store = createStore(
   )
 )
 
+const history = syncHistoryWithStore(browserHistory, store)
+
 document.addEventListener('DOMContentLoaded', () => {
   render(
     <Provider store={store}>
-      <Router history={browserHistory}>
+      <Router history={history}>
         <Route path='/' component={App}>
           <IndexRoute component={Questions} />
-          <Route path='AddQuestion' component={AddQuestion} />
-          <Route path='Question' component={Question} />
+          <Route path='add-question' component={AddQuestion} />
+          <Route path='question/:id' component={Question} />
         </Route>
       </Router>
     </Provider>,

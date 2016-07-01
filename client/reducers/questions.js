@@ -12,9 +12,8 @@ const questions = (state = INITIAL_STATE, action) => {
       }
       return state.concat([newQuestion])
     default:
-
+      return state
   }
-  return state
 }
 
 export default questions

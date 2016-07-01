@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Questions from '../containers/QuestionsContainer'
+
 export default React.createClass({
   render () {
     return (
