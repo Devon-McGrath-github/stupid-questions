@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 
 import App from './components/App'
 import reducer from './reducer'
-import AddQuestion from './components/Add-question'
+import AddQuestion from './components/AddQuestion'
 import Question from './components/Question'
 import Questions from './components/Questions'
 
