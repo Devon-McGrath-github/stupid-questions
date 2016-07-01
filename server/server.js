@@ -9,8 +9,9 @@ var answers = require('./routes/answers')
 var PORT = process.env.PORT || 3000
 var app = express()
 
+app.use(express.static(path.join(__dirname, '../static')))
+
 app.use(bodyParser.json())
-app.use(express.static(path.join(__dirname, 'static')))
 app.use('/v1/questions', questions)
 app.use('/v1/answers', answers)
 
