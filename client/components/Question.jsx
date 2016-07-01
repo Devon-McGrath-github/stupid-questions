@@ -1,10 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router'
+
 import Answers from './Answers'
-import AddAnswer from './AddAnswer'
+import AddAnswer from '../containers/AddAnswerContainer'
 
 export default React.createClass({
   propTypes: {
-    question: React.PropTypes.array
+    question: React.PropTypes.object
   },
   render () {
     return (
@@ -14,8 +16,8 @@ export default React.createClass({
         <h1>Q:</h1>
         <p>{this.props.question.content}</p>
         </div>
-          <Answers />
-          <AddAnswer />
+        <Answers answers={this.props.answers} />
+        <AddAnswer questionId={this.props.question.id}/>
       </div>
     )
   }
