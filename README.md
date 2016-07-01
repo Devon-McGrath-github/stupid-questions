@@ -43,6 +43,11 @@ createuser postgres --pwprompt
 This will prompt for a password, use `postgres` for the password.
 
 This means that when connecting to the local database, use the username `postgres` and the password `postgres`.
+Use `\du` to ensure that `postgres` role exists. Lack of role will lead to `role "postgres" does not exist` error on migration. To create the role from `psql`, use:
+```
+CREATE ROLE postgres WITH LOGIN PASSWORD 'postgres';
+```
+(Obviously, not a good combination for production use!)
 
 
 ## Heroku deployment
