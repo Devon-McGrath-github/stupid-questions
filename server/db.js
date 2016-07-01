@@ -1,11 +1,17 @@
-import knex from 'knex'
-import config from '../knexfile'
+var knex = require('knex');
+var config = require('../knexfile');
+
+module.exports = {
+  getQuestions: getQuestions,
+  getQuestionById: getQuestionById,
+  getAnswersByQuestionId: getAnswersByQuestionId
+}
 
 function getConnection () {
   return knex(config.development)
 }
 
-export function getQuestions () {
+function getQuestions () {
   const connection = getConnection()
   const questions = connection('questions')
     .select()
@@ -14,7 +20,7 @@ export function getQuestions () {
   return questions
 }
 
-export function getQuestionById (id) {
+function getQuestionById (id) {
   const connection = getConnection()
   const question = connection('questions')
     .where('id', '=', id)
@@ -23,7 +29,7 @@ export function getQuestionById (id) {
   return question
 }
 
-export function getAnswersByQuestionId (id) {
+function getAnswersByQuestionId (id) {
   const connection = getConnection()
   const answers = connection('answers')
     .where('question_id', '=', id)

@@ -4,7 +4,18 @@ var router = express.Router()
 var db = require('../db')
 
 router.get('/', function (req, res) {
-  res.json(db.getThings())
+  db.getQuestions()
+    .then(function (questions) {
+      res.json(questions)
+    })
+})
+
+router.get('/:id', function (req, res) {
+  var id = parseInt(req.params.id)
+  db.getQuestionById(id)
+    .then(function (question) {
+      res.json(question)
+      })
 })
 
 router.post('/', function (req, res) {
@@ -13,10 +24,5 @@ router.post('/', function (req, res) {
   res.send(data)
 })
 
-router.get('/:id', function (req, res) {
-  var id = parseInt(req.params.id) - 1
-  var data = db.getThings()
-  res.json(data[id])
-})
 
 module.exports = router
