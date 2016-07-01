@@ -32,6 +32,15 @@ export function getAnswersByQuestionId (id) {
   return answers
 }
 
+export function addQuestion (question) {
+  const connection = getConnection()
+  const newQuestion = connection('questions')
+    .insert({content: question})
+    .catch(handleError)
+  connection.destroy()
+  return newQuestion
+}
+
 function handleError (err) {
   console.error(err);
   return Promise.reject(new Error('There was a database error!'))
