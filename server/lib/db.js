@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.getQuestions = getQuestions;
 exports.getQuestionById = getQuestionById;
 exports.getAnswersByQuestionId = getAnswersByQuestionId;
+exports.addQuestion = addQuestion;
 
 var _knex = require('knex');
 
@@ -40,6 +41,13 @@ function getAnswersByQuestionId(id) {
   var answers = connection('answers').where('question_id', '=', id).catch(handleError);
   connection.destroy();
   return answers;
+}
+
+function addQuestion(question) {
+  var connection = getConnection();
+  var newQuestion = connection('questions').insert({ content: question }).catch(handleError);
+  connection.destroy();
+  return newQuestion;
 }
 
 function handleError(err) {
