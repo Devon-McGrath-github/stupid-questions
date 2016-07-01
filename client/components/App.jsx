@@ -3,7 +3,7 @@ import Question from './Question'
 
 import Questions from '../containers/QuestionsContainer'
 import questionList from '../dummy/questions'
-import AddQuestion from './Add-question'
+import AddQuestion from '../containers/AddQuestionContainer'
 
 export default React.createClass({
   render () {

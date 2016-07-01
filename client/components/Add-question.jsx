@@ -1,6 +1,10 @@
 import React from 'react'
 
-export default function AddQuestion () {
+AddQuestion.PropTypes = {
+  addQuestion: React.PropTypes.func
+}
+
+export default function AddQuestion (props) {
   let textInput = ''
   return (
     <div>
@@ -9,7 +13,7 @@ export default function AddQuestion () {
         e.preventDefault()
         if (textInput.value.trim()) {
           let question = textInput.value
-          console.log(question)
+          props.addQuestion(question)
         } }}>
          <input ref={input => { textInput = input } } />
          <button type='submit'>Submit</button>
