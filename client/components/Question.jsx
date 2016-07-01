@@ -1,10 +1,10 @@
 import React from 'react'
-import Answers from './Answers'
+import Answers from '../containers/AnswersContainer'
 import AddAnswer from './AddAnswer'
 
 export default React.createClass({
   propTypes: {
-    question: React.PropTypes.array
+    question: React.PropTypes.object
   },
   render () {
     return (

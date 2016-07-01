@@ -1,4 +1,5 @@
-export default [{
+export default [
+  {
     'id': 1,
     'questionId': 1,
     'content': 'My name is Hans Zimmer',

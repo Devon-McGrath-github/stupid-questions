@@ -5,10 +5,9 @@
   "main": "server/server.js",
   "scripts": {
     "build": "webpack",
-    "testerino": "webpack --watch",
-    
+    "watch": "webpack --watch",
     "postinstall": "webpack",
-    "watch": "webpack-dev-server --hot --inline",
+    "serve:watch": "webpack-dev-server --hot --inline",
     "start": "node server/server",
     "server": "node-inspector --web-port 8888 & node-dev --debug server/server",
     "test": "ava --watch",
@@ -17,7 +16,8 @@
     "migrate:latest": "knex migrate:latest",
     "migrate:rollback": "knex migrate:rollback",
     "seed:make": "knex seed:make",
-    "seed:run": "knex seed:run"
+    "seed:run": "knex seed:run",
+    "watch": "webpack --watch"
   },
   "ava": {
     "failfast": true,

@@ -5,13 +5,13 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 
 import App from './components/App'
-import reducer from './reducer'
-import AddQuestion from './components/Add-question'
 import Question from './components/Question'
 import Questions from './components/Questions'
+import AddQuestion from './components/AddQuestion'
+import appReducer from './reducers'
 
 let store = createStore(
-  reducer, compose(
+  appReducer, compose(
     applyMiddleware(),
     window.devToolsExtension ? window.devToolsExtension() : f => f
   )
