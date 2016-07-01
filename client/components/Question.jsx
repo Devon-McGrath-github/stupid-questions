@@ -9,12 +9,13 @@ export default React.createClass({
   render () {
     return (
       <div>
+        <Link to='/'><button>All Questions</button></Link>
         <div>
-          <h1>Q:</h1>
-          <p>{this.props.question.content}</p>
+        <h1>Q:</h1>
+        <p>{this.props.question.content}</p>
         </div>
-        <Answers />
-        <AddAnswer />
+          <Answers />
+          <AddAnswer />
       </div>
     )
   }

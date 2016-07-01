@@ -9,7 +9,6 @@ export default React.createClass({
   render () {
     // props placeholder. replace with this.props *something*
     let currentQuestion = questionsData[1]
-
     return (
       <div>
         <h1>Answers:</h1>

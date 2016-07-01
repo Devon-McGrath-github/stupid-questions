@@ -5,7 +5,8 @@
   "main": "server/server.js",
   "scripts": {
     "build": "webpack",
-    "lint": "eslint . --ext .js --ext .jsx --cache",
+    "testerino": "webpack --watch",
+    
     "postinstall": "webpack",
     "watch": "webpack-dev-server --hot --inline",
     "start": "node server/server",
