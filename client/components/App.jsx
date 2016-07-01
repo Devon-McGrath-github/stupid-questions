@@ -1,20 +1,18 @@
 import React from 'react'
-import Question from './Question'
 
 import Questions from '../containers/QuestionsContainer'
-import Questions from './Questions'
-import AddQuestion from './AddQuestion'
-import questionList from '../dummy/questions'
 import AddQuestion from '../containers/AddQuestionContainer'
+import Question from './Question'
+import questionList from '../dummy/questions.js'
 
 export default React.createClass({
   render () {
     return (
       <div>
         <h1>Stupid Questions</h1>
-        <Questions questions={questionList}/>
+        <Questions />
         <AddQuestion />
-        <Question question={questionList[0]}/>
+        <Question question={questionList[0]} />
       </div>
     )
   }

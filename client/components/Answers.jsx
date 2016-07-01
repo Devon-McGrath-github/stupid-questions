@@ -14,7 +14,8 @@ export default React.createClass({
               <li key={answer.id}>
                 {answer.content}
               </li>
-            )}
+            )
+          }
           )}
         </ul>
       </div>

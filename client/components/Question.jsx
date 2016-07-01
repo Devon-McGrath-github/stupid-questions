@@ -1,6 +1,5 @@
 import React from 'react'
 import Answers from '../containers/AnswersContainer'
-import Answers from './Answers'
 import AddAnswer from './AddAnswer'
 
 export default React.createClass({
