@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "testerino": "webpack --watch",
-    
+
     "postinstall": "webpack",
     "watch": "webpack-dev-server --hot --inline",
     "start": "node server/server",
@@ -17,8 +17,7 @@
     "migrate:latest": "knex migrate:latest",
     "migrate:rollback": "knex migrate:rollback",
     "seed:make": "knex seed:make",
-    "seed:run": "knex seed:run",
-    "db:seed": "knex migrate:latest && knex seed:run"
+    "seed:run": "knex seed:run"
   },
   "ava": {
     "failfast": true,
