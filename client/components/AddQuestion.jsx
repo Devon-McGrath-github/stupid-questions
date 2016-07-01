@@ -5,7 +5,6 @@ export default React.createClass({
     addQuestion: React.PropTypes.func
   },
   render () {
-    console.log(this.props)
     let textInput = ''
     return (
       <div>

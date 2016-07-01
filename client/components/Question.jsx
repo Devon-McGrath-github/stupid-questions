@@ -1,6 +1,6 @@
 import React from 'react'
 import Answers from '../containers/AnswersContainer'
-import AddAnswer from './AddAnswer'
+import AddAnswer from '../containers/AddAnswerContainer'
 
 export default React.createClass({
   propTypes: {
@@ -14,7 +14,7 @@ export default React.createClass({
           <p>{this.props.question.content}</p>
         </div>
         <Answers />
-        <AddAnswer />
+        <AddAnswer questionId={this.props.question.id}/>
       </div>
     )
   }
