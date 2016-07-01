@@ -4,13 +4,13 @@
   "description": "An app for students to anonymously ask 'stupid' questions.",
   "main": "server/server.js",
   "scripts": {
-    "build": "webpack",
     "dev-server": "webpack-dev-server",
-    "lint": "eslint . --ext .js --ext .jsx --cache",
-    "postinstall": "webpack",
     "serve:watch": "webpack-dev-server --hot --inline",
-    "start": "node server/server",
-    "server": "node-inspector --web-port 8888 & node-dev --debug server/server",
+    "build": "webpack && npm run transpile",
+    "lint": "eslint . --ext .js --ext .jsx --cache",
+    "postinstall": "npm run build",
+    "start": "node server/lib/server",
+    "server": "node-inspector --web-port 8888 & npm run transpile && node-dev --debug server/lib/server",
     "test": "ava --watch",
     "init": "knex init",
     "migrate:make": "knex migrate:make",
@@ -18,7 +18,8 @@
     "migrate:rollback": "knex migrate:rollback",
     "seed:make": "knex seed:make",
     "seed:run": "knex seed:run",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "transpile": "babel server --ignore server/lib,server/static --out-dir server/lib"
   },
   "ava": {
     "failfast": true,
@@ -53,6 +54,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "babel-cli": "^6.10.1",
     "babel-core": "^6.9.1",
     "babel-loader": "^6.2.4",
     "babel-polyfill": "^6.9.1",

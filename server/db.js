@@ -1,5 +1,5 @@
 import knex from 'knex'
-import config from '../knexfile'
+import config from '../../knexfile'
 
 function getConnection () {
   return knex(config.development)
@@ -30,6 +30,15 @@ export function getAnswersByQuestionId (id) {
     .catch(handleError)
   connection.destroy()
   return answers
+}
+
+export function addQuestion (question) {
+  const connection = getConnection()
+  const newQuestion = connection('questions')
+    .insert({content: question})
+    .catch(handleError)
+  connection.destroy()
+  return newQuestion
 }
 
 function handleError (err) {
