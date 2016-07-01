@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import AddQuestion from '../components/Add-question'
+import AddQuestion from '../components/AddQuestion'
 import { addQuestion } from '../actions'
 
 const mapDispatchToProps = (dispatch) => {
