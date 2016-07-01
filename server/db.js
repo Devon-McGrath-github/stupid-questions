@@ -4,7 +4,8 @@ var config = require('../knexfile');
 module.exports = {
   getQuestions: getQuestions,
   getQuestionById: getQuestionById,
-  getAnswersByQuestionId: getAnswersByQuestionId
+  getAnswersByQuestionId: getAnswersByQuestionId,
+  addQuestion: addQuestion
 }
 
 function getConnection () {
@@ -36,6 +37,15 @@ function getAnswersByQuestionId (id) {
     .catch(handleError)
   connection.destroy()
   return answers
+}
+
+function addQuestion (question) {
+  const connection = getConnection()
+  const newQuestion = connection('questions')
+    .insert({content: question})
+    .catch(handleError)
+  connection.destroy()
+  return newQuestion
 }
 
 function handleError (err) {

@@ -19,10 +19,14 @@ router.get('/:id', function (req, res) {
 })
 
 router.post('/', function (req, res) {
-  var data = db.getThings()
-  data.push({id: 4})
-  res.send(data)
+  var question = req.body
+  db.addQuestion(question.content)
+    .then(function () {
+      res.sendStatus(200)
+    })
+    .catch(function(err) {
+      res.status(500).send(err)
+    })
 })
-
 
 module.exports = router
