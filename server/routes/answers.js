@@ -16,8 +16,15 @@ router.get('/', function (req, res) {
 })
 
 router.post('/', function (req, res) {
-  var question = req.body
-  res.send(question)
+  var id = req.body.question_id
+  var answer = req.body.content
+  db.addAnswer(id, answer)
+    .then(function () {
+      res.sendStatus(200)
+    })
+    .catch(function(err) {
+      res.status(500).send(err)
+    })
 })
 
 module.exports = router
