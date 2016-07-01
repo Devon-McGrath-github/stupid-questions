@@ -11,10 +11,12 @@ export default React.createClass({
         <h1>Questions</h1>
         <ul>
           {this.props.questions.map(function (question) {
-            return <li key={question.id}><Link to='Question'>{question.content}</Link></li>
+            return <li key={question.id}>
+              <Link to={`question/${question.id}`}>{question.content}</Link>
+            </li>
           })}
         </ul>
-        <Link to='AddQuestion'><button>Add Question</button></Link>
+        <Link to='add-question'><button>Add Question</button></Link>
       </div>
     )
   }
