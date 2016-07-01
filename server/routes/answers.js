@@ -6,7 +6,10 @@ var db = require('../db')
 router.get('/', function (req, res) {
   if(req.query.qid) {
     var id = req.query.qid
-    res.send(id)
+    db.getAnswersByQuestionId(id)
+      .then(function (answers) {
+        res.json(answers)
+      })
   } else {
     res.sendStatus(404)
   }
